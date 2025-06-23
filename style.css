@@ -1,0 +1,141 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #ffffff;
+  --card-text: #000000;
+  --done-bg: #d4edda;
+  --input-bg: #ffffff;
+
+}
+
+body.dark {
+  --bg-color: #212529;
+  --text-color: #ffffff;
+  --card-bg: #1f1f1f;
+  --card-text: #ffffff;
+  --done-bg: #2a3b2d;
+  --input-bg: #343a40;
+}
+
+body,
+.card,
+.modal-content,
+.navbar,
+.btn,
+.form-control {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.card,
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+}
+
+input,
+textarea,
+.form-control {
+  background-color: var(--input-bg, #fff);
+  color: var(--text-color);
+  border: 1px solid #ccc;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+body.dark .text-muted {
+  color: #cccccc !important;
+}
+
+body.dark .navbar {
+  background-color: #1a1a1a !important;
+}
+
+body.dark .navbar .navbar-brand {
+  color: #ffffff !important;
+}
+
+/* Search input in dark mode */
+body.dark #search-input {
+  background-color: #343a40;
+  color: #ffffff;
+  border: 1px solid #6c757d;
+}
+
+/* Suggestion box background in dark mode */
+body.dark .suggestion-box {
+  background-color: #343a40;
+  color: #ffffff;
+  border-color: #6c757d;
+}
+
+/* Search button and icon in dark mode */
+body.dark #btn-search,
+body.dark #btn-search-icon {
+  color: #ffffff;
+  border-color: #6c757d;
+}
+
+/* Toggle theme button in dark mode */
+body.dark #toggle-theme {
+  color: #ffffff;
+  border-color: #6c757d;
+  background-color: #495057;
+}
+
+/* Search styles */
+@media (max-width: 768px) {
+  #search-input {
+    display: none;
+  }
+  #btn-search {
+    display: none;
+  }
+  #btn-search-icon {
+    display: inline-block !important;
+  }
+}
+
+#btn-search-icon {
+  display: none;
+  background: none;
+  border: none;
+  color: #198754;
+}
+
+/* Suggestion dropdown */
+.suggestion-box {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  background-color: var(--card-bg);
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Highlighted search match */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}

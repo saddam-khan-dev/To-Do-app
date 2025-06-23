@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ToDo App</title>
+
+        <!-- Bootstrap & Icons -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet" crossorigin="anonymous" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+            rel="stylesheet" />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar" style="background-color: #e3f2fd;"
+            data-bs-theme="light">
+            <div class="container-fluid position-relative">
+                <a class="navbar-brand" href="#"
+                    style="color: var(--text-color)">To-Do</a>
+                <div class="d-flex ms-auto align-items-center gap-2">
+                    <button id="toggle-theme" class="btn btn-outline-dark"
+                        title="Toggle Theme">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <button id="btn-addnew" class="btn btn-outline-info"
+                        type="button" data-bs-toggle="modal"
+                        data-bs-target="#todoModal">Add New</button>
+                    <form id="search-form"
+                        class="d-flex align-items-center position-relative"
+                        role="search" autocomplete="off">
+                        <input id="search-input" class="form-control me-2"
+                            type="search" placeholder="Search"
+                            aria-label="Search" />
+                        <div id="suggestion-box"
+                            class="suggestion-box d-none"></div>
+                        <button id="btn-search"
+                            class="btn btn-outline-success d-none d-md-inline"
+                            type="submit">Search</button>
+                        <button id="btn-search-icon" class="d-md-none"
+                            type="submit"><i
+                                class="bi bi-search fs-4"></i></button>
+                    </form>
+                    <button id="btn-export" class="btn btn-outline-secondary"
+                        type="button"><i class="bi bi-download"></i>
+                        Export</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Card Container -->
+        <div class="container my-4">
+            <div class="container text-center">
+                <div id="card-container" class="row row-cols-md-3 g-4"></div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav id="pagination-wrapper" style="display: none;">
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
+
+        <!-- Modal -->
+        <div class="modal fade" id="todoModal" tabindex="-1"
+            aria-labelledby="todoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="todoModalLabel">Add New
+                            Todo</h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="todoForm">
+                            <div class="mb-3">
+                                <label for="modal-title"
+                                    class="form-label">Title</label>
+                                <input type="text" class="form-control"
+                                    id="modal-title" required autofocus />
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="modal-text"
+                                    class="form-label">Description</label>
+                                <textarea class="form-control" id="modal-text"
+                                    rows="3" required></textarea>
+                            </div>
+                            <button type="submit"
+                                class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap Bundle -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+
+        <!-- Custom JavaScript -->
+        <script src="script.js" defer></script>
+    </body>
+</html>
